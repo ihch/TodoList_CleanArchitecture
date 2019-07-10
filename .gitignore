@@ -1,7 +1,0 @@
-# directories
-/_**/__pycache__
-
-# files
-hoge.py
-develop.db
-./**/__init__.pyc

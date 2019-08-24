@@ -2,9 +2,9 @@ import sqlite3
 from typing import List
 from domain.todo import Todo
 from interface.gateway.database.rdb.handler import (
-        SqlHandler as AbsSqlHandler,
-        Result as AbsResult
-        )
+    SqlHandler as AbsSqlHandler,
+    Result as AbsResult,
+)
 
 
 class Result(AbsResult):
@@ -17,9 +17,9 @@ class Result(AbsResult):
 
 class SqlHandler(AbsSqlHandler):
     def __init__(self):
-        self.connection = sqlite3.connect('develop.db')
+        self.connection = sqlite3.connect("develop.db")
         if self.connection is None:
-            raise('db connecting error')
+            raise ("db connecting error")
 
     def execute(self, sql: str, *args) -> Result:
         cur = self.connection.cursor()

@@ -11,8 +11,8 @@ class DownloadTodoResponse:
         res = {
             "id": self.todo._id,
             "name": self.todo.name,
-            "description": self.todo.description
-            }
+            "description": self.todo.description,
+        }
         return {"todo": res}
 
 
@@ -24,11 +24,13 @@ class DownloadTodosResponse:
         res = []
         for todo in self.todos:
             todo: Todo
-            res.append({
-                "id": todo._id,
-                "name": todo.name,
-                "description": todo.description
-                })
+            res.append(
+                {
+                    "id": todo._id,
+                    "name": todo.name,
+                    "description": todo.description,
+                }
+            )
         return {"todos": res}
 
 
@@ -44,9 +46,8 @@ class TodoInputPort(ABC):
 
     @abstractmethod
     def download_todo(
-            self,
-            params: DownloadTodoRequestParams
-            ) -> DownloadTodoResponse:
+        self, params: DownloadTodoRequestParams
+    ) -> DownloadTodoResponse:
         pass
 
 

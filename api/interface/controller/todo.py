@@ -9,9 +9,8 @@ from interface.gateway.database.rdb.todo import TodoRDBRepositoryAdapter
 class TodoController:
     def __init__(self):
         self.input_port = TodoInteractor(
-                HTTPPresenter(),
-                TodoRDBRepositoryAdapter()
-                )
+            HTTPPresenter(), TodoRDBRepositoryAdapter()
+        )
 
     def download_todos(self) -> List[Todo]:
         res = self.input_port.download_todos()

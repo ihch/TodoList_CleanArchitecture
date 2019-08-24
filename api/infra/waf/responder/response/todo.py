@@ -1,9 +1,6 @@
 from typing import List, Tuple
 from domain.todo import Todo
-from usecase.port.server.todo import (
-        DownloadTodoResponse,
-        DownloadTodosResponse
-        )
+from usecase.port.server.todo import DownloadTodoResponse, DownloadTodosResponse
 
 
 class TodoResult:
@@ -16,9 +13,7 @@ class TodosResult:
         self.results = todos
 
 
-def todo_response_adapter(
-        _res: DownloadTodoResponse
-        ) -> Tuple[TodoResult, int]:
+def todo_response_adapter(_res: DownloadTodoResponse) -> Tuple[TodoResult, int]:
     http_status = 200
     if _res.todo is None:
         http_status = 204
@@ -27,8 +22,8 @@ def todo_response_adapter(
 
 
 def todos_responder_adapter(
-        _res: DownloadTodosResponse
-        ) -> Tuple[TodosResult, int]:
+    _res: DownloadTodosResponse
+) -> Tuple[TodosResult, int]:
     http_status = 200
     if _res.todos.__len__ == 0:
         http_status = 204

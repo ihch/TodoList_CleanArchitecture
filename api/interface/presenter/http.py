@@ -1,10 +1,10 @@
 from typing import List
 from domain.todo import Todo
 from usecase.port.server.todo import (
-        TodoOutputPort,
-        DownloadTodoResponse,
-        DownloadTodosResponse
-        )
+    TodoOutputPort,
+    DownloadTodoResponse,
+    DownloadTodosResponse,
+)
 
 
 class HTTPPresenter(TodoOutputPort):

@@ -1,4 +1,4 @@
-DROP TABLE todo;
+DROP TABLE IF EXISTS todo;
 CREATE TABLE todo(id integer primary key, name text, description text);
 
 INSERT INTO todo VALUES(1, "hoge", "poyo");

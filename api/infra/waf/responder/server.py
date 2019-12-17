@@ -31,4 +31,4 @@ class Server(GetTodo):
         self.app.add_route("/", self.index)
 
     def run(self):
-        self.app.run()
+        self.app.run(address="0.0.0.0")
